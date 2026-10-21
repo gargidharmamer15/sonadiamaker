@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="sonadiamaker — precision die-making services including embossing dies, cutting dies and coining dies. Contact us for business enquiries.">
+  <title>sonadiamaker | Precision Die Making</title>
+  <style>
+    :root {
+      --bg: #0b0b0d;
+      --panel: #151518;
+      --panel-2: #1d1d21;
+      --gold: #d6ad55;
+      --gold-light: #f1d58b;
+      --text: #f7f4ed;
+      --muted: #b9b5ac;
+      --line: rgba(214, 173, 85, .28);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font-family: Arial, Helvetica, sans-serif; line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92%); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10; background: rgba(11,11,13,.94);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-size: 1.1rem; font-weight: 800; letter-spacing: 2px; }
+    .brand span { color: var(--gold); }
+    nav { display: flex; gap: 24px; flex-wrap: wrap; }
+    nav a { color: var(--muted); font-size: .92rem; }
+    nav a:hover { color: var(--gold-light); }
+    .hero {
+      min-height: 610px; display: flex; align-items: center;
+      background: radial-gradient(ellipse at 80% 35%, rgba(214,173,85,.14), transparent 35%),
+                  linear-gradient(125deg, #0b0b0d 0%, #151518 65%, #211b10 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-content { max-width: 780px; padding: 90px 0; }
+    .eyebrow { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: .8rem; font-weight: 700; }
+    h1 { font-size: clamp(2.7rem, 7vw, 5.4rem); line-height: 1.02; margin: 18px 0; letter-spacing: -2px; }
+    h1 span { color: var(--gold); }
+    .hero p { max-width: 640px; color: var(--muted); font-size: 1.12rem; }
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+    .btn { display: inline-block; padding: 13px 21px; border-radius: 4px; font-weight: 700; border: 1px solid var(--gold); }
+    .btn.primary { background: var(--gold); color: #111; }
+    .btn.secondary { color: var(--gold-light); }
+    section { padding: 82px 0; }
+    .section-head { max-width: 680px; margin-bottom: 34px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 8px 0 12px; line-height: 1.1; }
+    .section-head p, .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: var(--panel); border: 1px solid var(--line); padding: 26px; border-radius: 8px; }
+    .card .number { color: var(--gold); font-size: .8rem; letter-spacing: 2px; font-weight: 800; }
+    .card h3 { margin: 12px 0 8px; font-size: 1.25rem; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+    .about { background: #101013; }
+    .about-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 45px; align-items: center; }
+    .feature-box { padding: 30px; border: 1px solid var(--line); border-radius: 8px; background: linear-gradient(145deg, #19191d, #100f0d); }
+    .feature-box strong { color: var(--gold-light); display: block; font-size: 1.2rem; margin-bottom: 8px; }
+    .feature-box p { color: var(--muted); margin-top: 0; }
+    .feature-list { display: grid; gap: 12px; margin-top: 24px; }
+    .feature-list div::before { content: "✦"; color: var(--gold); margin-right: 10px; }
+    .cta { background: linear-gradient(110deg, #211b10, #111114 65%); border-block: 1px solid var(--line); }
+    .cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 28px; }
+    .cta h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.12; margin: 8px 0; }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 22px; }
+    .contact-item { padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .contact-item:last-child { border-bottom: 0; }
+    .contact-item small { color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 5px; }
+    form { display: grid; gap: 13px; }
+    input, textarea { width: 100%; background: #0d0d0f; border: 1px solid #3a352a; color: var(--text); padding: 14px; border-radius: 4px; font: inherit; }
+    input:focus, textarea:focus { outline: 1px solid var(--gold); }
+    textarea { min-height: 130px; resize: vertical; }
+    .form-note { color: var(--muted); font-size: .84rem; }
+    footer { padding: 28px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    @media (max-width: 760px) {
+      .nav { align-items: flex-start; flex-direction: column; padding: 16px 0; gap: 12px; }
+      nav { gap: 14px; }
+      .hero { min-height: auto; }
+      .hero-content { padding: 72px 0; }
+      .grid, .about-layout, .contact-grid { grid-template-columns: 1fr; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      section { padding: 62px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">sonadiamaker</a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#technology">Technology</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="eyebrow">Precision Die Making</div>
+        <h1>Built for precision.<br><span>Made for industry.</span></h1>
+        <p>sonadiamaker focuses on die-making solutions for industrial applications, including embossing dies, cutting dies and coining dies. Get in touch to discuss your project requirements.</p>
+        <div class="actions">
+          <a class="btn primary" href="#contact">Request an Enquiry</a>
+          <a class="btn secondary" href="#services">Explore Our Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">What We Do</div>
+          <h2>Die-making services</h2>
+          <p>Tell us about your part, drawing or application so we can discuss the right tooling requirements for your project.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="number">01 / EMBOSSING</div>
+            <h3>Embossing Dies</h3>
+            <p>Die-making for embossing applications, based on the design and specifications provided by the customer.</p>
+          </article>
+          <article class="card">
+            <div class="number">02 / CUTTING</div>
+            <h3>Cutting Dies</h3>
+            <p>Tooling enquiries for cutting applications, with project details reviewed before confirming feasibility.</p>
+          </article>
+          <article class="card">
+            <div class="number">03 / COINING</div>
+            <h3>Coining Dies</h3>
+            <p>Die-making enquiries for coining applications. Share your drawing, material and required quantity to get started.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-layout">
+        <div>
+          <div class="eyebrow">About sonadiamaker</div>
+          <h2>Industrial tooling, built around your requirements.</h2>
+          <p class="muted">We work with customers to understand their tooling needs and review available drawings, samples and application details. Contact us to discuss a new requirement or a repeat order.</p>
+          <div class="feature-list">
+            <div>Embossing, cutting and coining die enquiries</div>
+            <div>Customer drawings and project specifications welcome</div>
+            <div>Business enquiries from India and international markets</div>
+          </div>
+        </div>
+        <div class="feature-box" id="technology">
+          <strong>CNC-focused die-making</strong>
+          <p>Have a technical drawing, sample photo or previous job reference? Share the details with us so the project can be reviewed.</p>
+          <strong>Have a project in mind?</strong>
+          <p>Use the enquiry section to tell us about your application, material, quantity and expected timeline.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <div class="eyebrow">Start a Conversation</div>
+          <h2>Need a die-making partner?</h2>
+          <p class="muted">Send your requirement and project details for a follow-up.</p>
+        </div>
+        <a class="btn primary" href="#contact">Contact sonadiamaker</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Contact Us</div>
+          <h2>Let’s discuss your requirement.</h2>
+          <p>For a faster response, include your drawing or project details when contacting us.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="card">
+            <div class="contact-item">
+              <small>Phone</small>
+              <a href="tel:+919168556561">+91 91685 56561</a><br>
+              <a href="tel:+917020678935">+91 70206 78935</a>
+            </div>
+            <div class="contact-item">
+              <small>Email</small>
+              <a href="mailto:sonadiamaker@gmail.com">sonadiamaker@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <small>Location</small>
+              <span>Chinchani, Taluka Dahanu, Palghar, Maharashtra, India</span>
+            </div>
+            <div class="contact-item">
+              <small>Instagram</small>
+              <a href="https://www.instagram.com/sonadiemaker/" target="_blank" rel="noopener">@sonadiemaker</a>
+            </div>
+          </div>
+          <div class="card">
+            <form id="enquiryForm">
+              <input id="name" name="name" placeholder="Your name / company" required>
+              <input id="email" name="email" type="email" placeholder="Your email address">
+              <input id="phone" name="phone" type="tel" placeholder="Your phone number">
+              <textarea id="message" name="message" placeholder="Tell us about your die-making requirement" required></textarea>
+              <button class="btn primary" type="submit">Prepare Enquiry Email</button>
+              <div class="form-note">This button opens your email app with the enquiry details. It does not send or store information on this website.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> sonadiamaker. All rights reserved.</span>
+      <span>Precision Die Making · Maharashtra, India</span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('enquiryForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Die-making enquiry from ' + name);
+      const body = encodeURIComponent(
+        'Name / Company: ' + name + '\n' +
+        'Email: ' + (email || 'Not provided') + '\n' +
+        'Phone: ' + (phone || 'Not provided') + '\n\n' +
+        'Requirement:\n' + message
+      );
+      window.location.href = 'mailto:sonadiamaker@gmail.com?subject=' + subject + '&body=' + body;
+    });
+  </script>
+</body>
+</html>
